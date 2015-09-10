@@ -44,12 +44,10 @@ GET
 PUT
 DELETE
 
-
 ##Models
 De ulike modellene man trenger i portalen.
 
-###task
-_id
+###task_id
 user
 type
 title
