@@ -34,37 +34,445 @@
 
     <!-- Page styles -->
     <link rel="stylesheet" href="styles/main.css">
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+
+
   </head>
   <body>
-    <header class="app-bar promote-layer">
-      <div class="app-bar-container">
-        <button class="menu"><img src="images/hamburger.svg" alt="Menu"></button>
-        <h1 class="logo">Portalen 2000</h1>
-        <section class="app-bar-actions">
-        <!-- Put App Bar Buttons Here -->
-        <!-- e.g <button><i class="icon icon-star"></i></button> -->
-        </section>
-      </div>
-    </header>
 
-    <nav class="navdrawer-container promote-layer">
-      <h4>Navigation</h4>
-      <ul>
-        <li><a href="#hello">Hello</a></li>
-        <li><a href="#get-started">Get Started</a></li>
-        <li><a href="styleguide.html">Style Guide</a></li>
+  <div id="wrapper">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <a class="navbar-brand" href="index.html"><span id="app"></span></a>
+      </div>
+      <!-- /.navbar-header -->
+
+      <ul class="nav navbar-top-links navbar-right">
+        <!-- /.dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-user">
+            <li><a href="#"><i class="fa fa-user fa-fw"></i> Min profil</a>
+            </li>
+            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Innstillinger</a>
+            </li>
+            <li class="divider"></li>
+            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logg av</a>
+            </li>
+          </ul>
+          <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
       </ul>
+      <!-- /.navbar-top-links -->
+
+      <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+          <ul class="nav" id="side-menu">
+            <li>
+              <a href="index.html"><i class="fa fa-group fa-fw"></i> Finn ansatte</a>
+            </li>
+            <li>
+              <a href="tables.html"><i class="fa fa-table fa-fw"></i> Politiske møter/saker</a>
+            </li>
+            <li>
+              <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Styringsdokumenter</a>
+            </li>
+            <li>
+              <a href="index.html"><i class="fa fa-calendar fa-fw"></i> Møteromsbestilling</a>
+            </li>
+            <li>
+              <a href="tables.html"><i class="fa fa-cutlery fa-fw"></i> Møtematbestilling</a>
+            </li>
+            <li>
+              <a href="forms.html"><i class="fa fa-car fa-fw"></i> Reservasjon av tjenestebiler</a>
+            </li>
+            <li>
+              <a href="index.html"><i class="fa fa-credit-card fa-fw"></i> Innkjøpsavtaler</a>
+            </li>
+            <li>
+              <a href="tables.html"><i class="fa fa-legal fa-fw"></i> Eksamensreglementet</a>
+            </li>
+            <li>
+              <a href="index.html"><i class="fa fa-pencil fa-fw"></i> NDLA</a>
+            </li>
+            <li>
+              <a href="tables.html"><i class="fa fa-graduation-cap fa-fw"></i> Udir</a>
+            </li>
+            <li>
+              <a href="forms.html"><i class="fa fa-edit fa-fw"></i> KF-infoserie</a>
+            </li>
+            <li>
+              <a href="forms.html"><i class="fa fa-wrench fa-fw"></i> Endre lenker</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
+      </div>
+      <!-- /.navbar-static-side -->
     </nav>
 
-    <main id="app">
+    <div id="page-wrapper">
 
-    </main>
+      <div class="row" style="padding-top: 15px; margin-bottom: 15px;">
+        <div class="col-lg-12">
+          <div class="input-group custom-search-form">
+            <input type="text" class="form-control" placeholder="Skriv søketeksten din her">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                          <i class="fa fa-search"></i>
+                        </button>
+                        </span>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
 
-    <script async defer="defer" src="scripts/bundle.js"></script>
-    <!-- build:js scripts/main.min.js -->
-    <script async defer="defer" src="scripts/main.js"></script>
-    <!-- endbuild -->
-    <!-- Built with love using Web Starter Kit -->
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-xs-9 text-right">
+                  <div class="huge">Arbeidsrom</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="panel panel-green">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-xs-9 text-right">
+                  <div class="huge">Sak/arkiv</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="panel panel-yellow">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-xs-9 text-right">
+                  <div class="huge">Compilio</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="panel panel-red">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-xs-9 text-right">
+                  <div class="huge">Min side</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <i class="fa fa-th-list"></i> Oppgaver
+              <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-chevron-down"></i>
+                </button>
+                <ul class="dropdown-menu slidedown">
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-refresh fa-fw"></i> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-check-circle fa-fw"></i> Available
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-times fa-fw"></i> Busy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-clock-o fa-fw"></i> Away
+                    </a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-sign-out fa-fw"></i> Sign Out
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+              <div class="list-group">
+                <a href="#" class="list-group-item">
+                  <i class="fa fa-comment fa-fw"></i> Godkjenne reiseregninger
+                                    <span class="pull-right text-muted small"><em>4 minutes ago</em>
+                                    </span>
+                </a>
+                <a href="#" class="list-group-item">
+                  <i class="fa fa-twitter fa-fw"></i> Innmeldt avvik
+                                    <span class="pull-right text-muted small"><em>12 minutes ago</em>
+                                    </span>
+                </a>
+                <a href="#" class="list-group-item">
+                  <i class="fa fa-envelope fa-fw"></i> 3 saker til behandling
+                                    <span class="pull-right text-muted small"><em>27 minutes ago</em>
+                                    </span>
+                </a>
+                <a href="#" class="list-group-item">
+                  <i class="fa fa-tasks fa-fw"></i> PC klar til henting
+                                    <span class="pull-right text-muted small"><em>43 minutes ago</em>
+                                    </span>
+                </a>
+                <a href="#" class="list-group-item">
+                  <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small"><em>11:32 AM</em>
+                                    </span>
+                </a>
+                <a href="#" class="list-group-item">
+                  <i class="fa fa-bolt fa-fw"></i> Konseptfase: Innspill fra Jon Skriubakken
+                                    <span class="pull-right text-muted small"><em>11:13 AM</em>
+                                    </span>
+                </a>
+                <a href="#" class="list-group-item">
+                  <i class="fa fa-warning fa-fw"></i> Send e-post til Varden
+                                    <span class="pull-right text-muted small"><em>10:57 AM</em>
+                                    </span>
+                </a>
+                <a href="#" class="list-group-item">
+                  <i class="fa fa-shopping-cart fa-fw"></i> Vann planter
+                                    <span class="pull-right text-muted small"><em>9:49 AM</em>
+                                    </span>
+                </a>
+                <a href="#" class="list-group-item">
+                  <i class="fa fa-money fa-fw"></i> MinTid: Godkjenn periode
+                                    <span class="pull-right text-muted small"><em>Yesterday</em>
+                                    </span>
+                </a>
+              </div>
+              <!-- /.list-group -->
+              <a href="#" class="btn btn-default btn-block">Vis alle oppgaver</a>
+            </div>
+            <!-- /.panel-body -->
+          </div>
+          <!-- /.panel -->
+
+          <!-- /.panel -->
+          <div class="chat-panel panel panel-default">
+            <div class="panel-heading">
+              <i class="fa fa-comments fa-fw"></i>
+              Meldinger
+              <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-chevron-down"></i>
+                </button>
+                <ul class="dropdown-menu slidedown">
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-refresh fa-fw"></i> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-check-circle fa-fw"></i> Available
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-times fa-fw"></i> Busy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-clock-o fa-fw"></i> Away
+                    </a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-sign-out fa-fw"></i> Sign Out
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+              <ul class="chat">
+                <li class="left clearfix">
+                                    <span class="chat-img pull-left">
+                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                  <div class="chat-body clearfix">
+                    <div class="header">
+                      <strong class="primary-font">E-postproblemer</strong>
+                      <small class="pull-right text-muted">
+                        <i class="fa fa-clock-o fa-fw"></i> 12 mins ago
+                      </small>
+                    </div>
+                    <p>
+                      Vi har problemer med e-post i dag. Det jobbes med å finne en løsning.
+                    </p>
+                    <div class="footer">
+                      <small class="pull-right text-muted">
+                        #it #driftsmeldinger
+                      </small>
+                    </div>
+                  </div>
+                </li>
+                <li class="left clearfix">
+                                    <span class="chat-img pull-left">
+                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                  <div class="chat-body clearfix">
+                    <div class="header">
+                      <strong class="primary-font">Kurs i 360</strong>
+                      <small class="pull-right text-muted">
+                        <i class="fa fa-clock-o fa-fw"></i> 30 mins ago
+                      </small>
+                    </div>
+                    <p>
+                      Nytt kurs i 360 for saksbehandlere i administrasjonen avholdes 17. oktober.<br/>
+                      <a href="">Meld deg på</a>
+                    </p>
+                    <div class="footer">
+                      <small class="pull-right text-muted">
+                        #kurs #fylkeshuset
+                      </small>
+                    </div>
+                  </div>
+                </li>
+                <li class="left clearfix">
+                                    <span class="chat-img pull-left">
+                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                  <div class="chat-body clearfix">
+                    <div class="header">
+                      <strong class="primary-font">Kaniner til salgs</strong>
+                      <small class="pull-right text-muted">
+                        <i class="fa fa-clock-o fa-fw"></i> yesterday
+                      </small>
+                    </div>
+                    <p>
+                      Pelle og Polly har fått unger. Sleges til 50 kr pr stk<br/>
+                      Kontakt <a href="">Tania</a> for mer
+                    </p>
+                    <div class="footer">
+                      <small class="pull-right text-muted">
+                        #rubrikk #fylkeshuset
+                      </small>
+                    </div>
+                  </div>
+                </li>
+                <li class="left clearfix">
+                                    <span class="chat-img pull-left">
+                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                  <div class="chat-body clearfix">
+                    <div class="header">
+                      <strong class="primary-font">Best i landet</strong>
+                      <small class="pull-right text-muted">
+                        <i class="fa fa-clock-o fa-fw"></i> yesterday
+                      </small>
+                    </div>
+                    <p>
+                      Nome vgs er kåret til landets beste.<br/>
+                      <a href="">Les hele saken</a>
+                    </p>
+                    <div class="footer">
+                      <small class="pull-right text-muted">
+                        #nyheter #utdanning
+                      </small>
+                    </div>
+                  </div>
+                </li>
+                <li class="left clearfix">
+                                    <span class="chat-img pull-left">
+                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                  <div class="chat-body clearfix">
+                    <div class="header">
+                      <strong class="primary-font">Fredagspils/mineralvann på Lundetangen</strong>
+                      <small class="pull-right text-muted">
+                        <i class="fa fa-clock-o fa-fw"></i> 2 days ago
+                      </small>
+                    </div>
+                    <p>
+                      Vi samles på Lundetangen fredag 11. september kl 16:00<br/>
+                      Dan tar med gitaren, du tar med humøret
+                    </p>
+                    <div class="footer">
+                      <small class="pull-right text-muted">
+                        #sosialt #fylkeshuset
+                      </small>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <a href="#" class="btn btn-default btn-block">Vis alle meldinger</a>
+            </div>
+            <!-- /.panel-body -->
+
+            <!-- /.panel-footer -->
+          </div>
+          <!-- /.panel .chat-panel -->
+        </div>
+        <!-- /.col-lg-4 -->
+      </div>
+    </div>
+
+    <!-- /.row -->
+  </div>
+  <!-- /#page-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <script async defer="defer" src="scripts/bundle.js"></script>
+  <!-- build:js async defer=defer scripts/main.min.js -->
+  <!-- jQuery -->
+  <script src="scripts/jquery/dist/jquery.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script async defer="defer" src="scripts/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- Metis Menu Plugin JavaScript -->
+  <script src="scripts/metisMenu/src/metisMenu.js"></script>
+  <!-- sb2 -->
+  <script async defer="defer" src="scripts/sb-admin-2.js"></script>
+  <!-- endbuild -->
+  <!-- Built with love using Web Starter Kit -->
 
   </body>
 </html>

@@ -94,11 +94,8 @@ gulp.task('styles', function () {
     'bb >= 10'
   ];
 
-
-
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
-    'app/**/*.scss',
     'app/styles/**/*.css'
   ])
     .pipe($.changed('.tmp/styles', {extension: '.css'}))
@@ -117,7 +114,12 @@ gulp.task('styles', function () {
 
 // Concatenate and minify JavaScript
 gulp.task('scripts', function () {
-  var sources = ['./app/scripts/main.js'];
+  var sources = [
+    './app/scripts/jquery/src/jquery.js',
+    './app/scripts/bootstrap/dist/js/bootstrap.min.js',
+    './app/scripts/metisMenu/src/metisMenu.js',
+    './app/scripts/main.js'
+  ];
   return gulp.src(sources)
     .pipe($.concat('main.min.js'))
     .pipe($.uglify({preserveComments: 'some'}))
@@ -163,7 +165,7 @@ gulp.task('html', function () {
 gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
 // Watch files for changes & reload
-gulp.task('serve', ['styles', 'browserify'], function () {
+gulp.task('serve', ['styles', 'browserify', 'scripts'], function () {
   browserSync({
     notify: false,
     // Customize the BrowserSync console logging prefix
@@ -177,7 +179,7 @@ gulp.task('serve', ['styles', 'browserify'], function () {
 
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js'], ['browserify', reload]);
+  gulp.watch(['app/scripts/**/*.js'], ['browserify', 'scripts', reload]);
   gulp.watch(['app/images/**/*'], reload);
 });
 
@@ -199,7 +201,7 @@ gulp.task('serve:dist', ['default'], function () {
 gulp.task('default', ['clean'], function (cb) {
   runSequence(
     'styles',
-    ['browserify', 'html', 'images', 'fonts', 'copy'],
+    ['browserify', 'scripts', 'html', 'images', 'fonts', 'copy'],
     'generate-service-worker',
     cb);
 });
