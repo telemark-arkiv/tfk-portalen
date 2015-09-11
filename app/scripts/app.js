@@ -9,7 +9,7 @@ var App = React.createClass({
   },
   render: function () {
     return (
-      <span>Hello, world!</span>
+      <span>Portalen 2000</span>
     )
   }
 })
