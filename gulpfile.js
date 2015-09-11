@@ -31,6 +31,13 @@ var swPrecache = require('sw-precache');
 var fs = require('fs');
 var path = require('path');
 var packageJson = require('./package.json');
+var browserify = require('browserify');
+var reactify = require('reactify');
+var transform = require('vinyl-transform');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+var uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
 
 // Lint JavaScript
 gulp.task('jshint', function () {
@@ -156,7 +163,7 @@ gulp.task('html', function () {
 gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
 // Watch files for changes & reload
-gulp.task('serve', ['styles'], function () {
+gulp.task('serve', ['styles', 'browserify'], function () {
   browserSync({
     notify: false,
     // Customize the BrowserSync console logging prefix
@@ -170,7 +177,7 @@ gulp.task('serve', ['styles'], function () {
 
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js'], ['jshint']);
+  gulp.watch(['app/scripts/**/*.js'], ['browserify', reload]);
   gulp.watch(['app/images/**/*'], reload);
 });
 
@@ -192,7 +199,7 @@ gulp.task('serve:dist', ['default'], function () {
 gulp.task('default', ['clean'], function (cb) {
   runSequence(
     'styles',
-    ['jshint', 'html', 'scripts', 'images', 'fonts', 'copy'],
+    ['browserify', 'html', 'images', 'fonts', 'copy'],
     'generate-service-worker',
     cb);
 });
@@ -206,6 +213,31 @@ gulp.task('pagespeed', function (cb) {
     // Use a Google Developer API key if you have one: http://goo.gl/RkN0vE
     // key: 'YOUR_API_KEY'
   }, cb);
+});
+
+//Browserify
+gulp.task('browserify', function() {
+
+  var bundler = browserify({
+    entries: ['./app/scripts/app.js'],
+    debug: true
+  });
+
+  var bundle = function() {
+    return bundler
+      .transform(reactify)
+      .bundle()
+      .pipe(source('bundle.js'))
+      .pipe(buffer())
+      .pipe(sourcemaps.init({loadMaps: true}))
+      // Add transformation tasks to the pipeline here.
+      .pipe(uglify())
+      .pipe(sourcemaps.write('./'))
+      .pipe(gulp.dest('.tmp/scripts/'))
+      .pipe(gulp.dest('./dist/scripts/'));
+  };
+
+  return bundle();
 });
 
 
