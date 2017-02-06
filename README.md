@@ -1,5 +1,7 @@
 # tfk-portalen
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/telemark/tfk-portalen.svg)](https://greenkeeper.io/)
+
 Enkel beskrivelse av skjelettet til ny portalforside.
 Det er tenkt svært minimalistisk og hele løsningen består av funksjoner for oppgaver, meldinger og linker.
 Oppgavene blir postet til portalen fra ulike fagsystemer.
